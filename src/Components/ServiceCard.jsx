@@ -30,7 +30,7 @@ const ServiceCard = ({ icon: Icon, heading, para }) => {
                 }}
                 elevation={3}
             >
-                <Icon sx={{ fontSize: '40px', color: '#1976d2' }} />
+                <Icon sx={{ fontSize: '40px' }} />
             </Paper>
 
             {/* Content Container */}

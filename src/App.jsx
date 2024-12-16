@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Sections/Header/Header';
-import Work from './Sections/Work/Work';
+import Work from './Sections/Body/Work';
 import { CssBaseline, Fab } from '@mui/material';
 import NorthIcon from '@mui/icons-material/North';
+import { ScrollProvider } from './Context/NavigationRefs';
+import Footer from './Sections/Footer/Footer';
 
 const App = () => {
 
@@ -27,20 +29,21 @@ const App = () => {
 
 
   return (
-    <>
+    <ScrollProvider>
       <CssBaseline />
       <Header />
       <Work />
+      <Footer />
 
       <Fab
         color="secondary"
         size='small'
-        sx={(theme) => ({
+        sx={() => ({
           display: display,
-          position: 'sticky',
-          bottom: theme.spacing(2),
-          left: theme.spacing(159),
-          background: '#343a40'
+          position: 'fixed',
+          bottom: 10,
+          left: '95%',
+          background: '#343a40',
         })}
         onClick={() => {
           window.scrollTo({
@@ -53,7 +56,7 @@ const App = () => {
       >
         <NorthIcon sx={{ height: '15px' }} />
       </Fab>
-    </>
+    </ScrollProvider>
   );
 }
 

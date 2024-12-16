@@ -1,8 +1,9 @@
-import { ArrowRight, PlayArrow } from '@mui/icons-material';
+import { ArrowRight } from '@mui/icons-material';
 import { Button, Typography } from '@mui/material';
 import { Box, Stack } from '@mui/system';
 import React from 'react';
 import { motion } from 'framer-motion';
+import VideoModal from './VideoModal';
 
 const MotionText = motion(Typography)
 const MotionStack = motion(Stack)
@@ -50,7 +51,7 @@ const Hero = () => {
                     variant="body1"
                     sx={{
                         mb: 4,
-                        transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out', 
+                        transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
                     }}
                 >
                     Leverage agile frameworks to provide a robust synopsis for high-level
@@ -59,7 +60,7 @@ const Hero = () => {
                 </MotionText>
 
                 <MotionStack
-                    initial={{ opacity: 0, y: 100 , transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',}}
+                    initial={{ opacity: 0, y: 100, transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out', }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: 'easeIn' }}
                     direction="row"
@@ -86,25 +87,7 @@ const Hero = () => {
                     >
                         Get Started
                     </Button>
-                    <Button
-                        variant="outlined"
-                        startIcon={<PlayArrow />}
-                        sx={{
-                            color: '#343a40',
-                            fontWeight: 600,
-                            textTransform: 'none',
-                            borderRadius: '20px',
-                            borderColor: '#343a40',
-                            px: 3,
-                            py: 1,
-                            '&:hover': {
-                                backgroundColor: '#343a40',
-                                color: '#fff',
-                            },
-                        }}
-                    >
-                        Watch Video
-                    </Button>
+                    <VideoModal videoSrc='https://youtu.be/aqz-KE-bpKQ' />
                 </MotionStack>
             </Box>
 

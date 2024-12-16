@@ -1,0 +1,8 @@
+.slick-track {
+    flex-direction: row !important;
+    justify-content: center;
+}
+.slick-slide {
+    justify-content: center;
+    align-items: center;
+}
